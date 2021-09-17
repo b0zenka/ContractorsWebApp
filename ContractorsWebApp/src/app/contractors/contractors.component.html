@@ -1,0 +1,35 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Rejestracja kontrahentów</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-contractor-form></app-contractor-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Nazwa firmy</th>
+                    <th>Miasto</th>
+                    <th>Usuń</th>
+                    <th>Edytuj</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let contractor of service.list">
+                    <td>{{contractor.id}}</td>
+                    <td>{{contractor.shortName}}</td>
+                    <td>{{contractor.city}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(contractor.id)"></i>
+                    </td>
+                    <td>
+                        <i class="fas fa-pencil-alt fa-lg text-primary" (click)="populateForm(contractor)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+
+    <input type="hidden" name="id"
+    [value]="service.formData.id" />
+    <div class="form-group">
+        <label>Skrócona nazwa firmy</label>
+        <input class="form-control form-control-lg" placeholder="Firma"
+        name="shortName" #shortName="ngModel" [(ngModel)]="service.formData.shortName"
+        required>
+    </div>
+    <div class="form-group">
+        <label>Pełna nazwa firmy</label>
+        <input class="form-control form-control-lg" placeholder="Firma Sp. z o.o."
+        name="name" #name="ngModel" [(ngModel)]="service.formData.name"
+        required>
+    </div>
+    <div class="form-group">
+        <label>NIP</label>
+        <input class="form-control form-control-lg" placeholder="10-cyfrowy NIP"
+        name="nip" #nip="ngModel" [(ngModel)]="service.formData.nip"
+        required>
+    </div>
+    <div class="form-group">
+        <label>E-mail</label>
+        <input class="form-control form-control-lg" placeholder="user@example.com"
+        name="contactEmail" #contactEmail="ngModel" [(ngModel)]="service.formData.contactEmail">
+    </div>
+    <div class="form-group">
+        <label>Telefon</label>
+        <input class="form-control form-control-lg" placeholder="0048-666-666-666"
+        name="contactNumber" #contactNumber="ngModel" [(ngModel)]="service.formData.contactNumber">
+    </div>
+    <div class="form-group">
+        <label>Kraj</label>
+        <input class="form-control form-control-lg" placeholder="Polska"
+        name="country" #country="ngModel" [(ngModel)]="service.formData.country"
+        required>
+    </div>
+    <div class="form-group">
+        <label>Ulica</label>
+        <input class="form-control form-control-lg" placeholder="Wesoła 4c/1"
+        name="street" #street="ngModel" [(ngModel)]="service.formData.street">
+    </div>
+
+        <div class="form-group"> 
+            <label>Kod pocztowy</label>
+            <input class="form-control form-control-lg" placeholder="00-000"
+            name="postalCode" #postalCode="ngModel" [(ngModel)]="service.formData.postalCode">
+        </div>
+        <div class="form-group">
+            <label>Miasto</label>
+            <input class="form-control form-control-lg" placeholder="Kraków"
+            name="city" #city="ngModel" [(ngModel)]="service.formData.city">
+        </div>
+    
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit">SUBMIT</button>
+    </div>
+</form>
